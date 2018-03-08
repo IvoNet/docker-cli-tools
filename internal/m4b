@@ -285,6 +285,8 @@ cd "$TEMP_DIR"
 mv *.JPG cover.jpg &> /dev/null
 mv *.jpeg cover.jpg &> /dev/null
 
+ls -lsa /tmp
+
 ffmpeg -i "$GROUPED_MP3_NAME" -threads 4 -vn -y -acodec aac -strict -2 -map_metadata 0 -map_metadata:s:a 0:s:a -ab "$BITRATE"k -ar "$SAMPLERATE" -ac 1 "$AUDIOBOOK.m4a"
 [ $RETVAL -eq 0 ] || die "The ffmpeg command failed with exit code: $RETVAL"
 
