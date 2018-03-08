@@ -1,6 +1,6 @@
 # CLI Tools
 
-This images knows a cli tools not normally present on a NAS.
+This images delivers cli commands not normally present on a NAS.
 It was created with that purpose in mind but can of course be used anywhere yo have docker available.
 
 If you want more commands available please fork this repo, make your changes and do a pull request.
@@ -13,6 +13,11 @@ but I do want to use them there
 so I made an image and exposed a few volumes to make them 
 work as my NAS does support docker.
 
+# Usage
+
+Clone this project to your home folder on your nas and add the `bin` folder to your path
+and have fun :-)
+
 # What
 
 This images contains the following tools:
@@ -23,6 +28,7 @@ This images contains the following tools:
 * melt
 * mencoder
 * atomicparsley
+* and lots more (see Dockerfile for the full list)
 
 # Added Commands
 
