@@ -17,7 +17,7 @@ mkv="$(basename $1)"
 map="$(dirname $1)"
 enc="${mkv%.*}.new.mkv"
 enc="$(basename $enc)"
-docker run \
+sudo docker run \
    --cpuset-cpus="1-2" \
    --rm \
    -v "$(pwd)/$map:/input:ro" \

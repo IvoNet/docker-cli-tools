@@ -16,7 +16,7 @@ mkv="$(basename $1)"
 map="$(dirname $1)"
 m4v="${mkv%.*}.m4v"
 m4v="$(basename $m4v)"
-docker run \
+sudo docker run \
     --rm \
     --cpuset-cpus="1-2" \
     --name \

@@ -11,7 +11,7 @@ AUDIOBOOK_LOC="$(pwd)"
 ##############################################################################
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
-docker run \
+sudo docker run \
    -it \
    --cpuset-cpus="1-2" \
    --rm \
