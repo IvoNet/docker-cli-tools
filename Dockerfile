@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:16.04
 MAINTAINER Ivo Woltring <webmaster@ivonet.nl>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -22,7 +22,10 @@ RUN apt-get update \
     melt \
     atomicparsley \
     mp4v2-utils \
+    id3v2 \
+    eyed3 \
+    mp3info \
     && apt-get clean
 
-ENTRYPOINT ["/bin/bash -c"]
-CMD ["Hand"]
+COPY internal/* /usr/local/bin/
+RUN chmod +x /usr/local/bin

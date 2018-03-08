@@ -2,6 +2,17 @@
 ##############################################################################
 # Remove audio tracks from an MKV file
 ##############################################################################
+
+
+
+##############################################################################
+# Be careful editing anything below this line
+##############################################################################
+if [ -z "$1" ]; then
+    echo "Please provide an mkv file as parameter and the track to keep"
+    echo "Syntax: $0 <mkv> <tracknr>"
+    exit 1
+fi
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 mkv="$(basename $1)"
@@ -11,7 +22,6 @@ enc="$(basename $enc)"
 docker run \
    --cpuset-cpus="1-2" \
    --rm \
-   --name mkvmerge \
    -v "$(pwd)/$map:/input:ro" \
    -v "$(pwd)/$map:/output:rw" \
    --entrypoint "mkvmerge" \

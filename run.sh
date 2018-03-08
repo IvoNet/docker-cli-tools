@@ -3,16 +3,21 @@
 # Run in interactive mode for testing purposes
 ##############################################################################
 
+
+if [ -z "$1" ]; then
+    OUTPUT="$(pwd)/output"
+else
+    OUTPUT="$1"
+fi
+
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
-mkv="$(basename $1)"
-map="$(dirname $1)"
 docker run \
+   -it \
    --rm \
-   --name "nas-cli-test" \
-   -v "$(pwd)/${map}:/input:ro" \
-   -v "$(pwd)/output:/output:rw" \
+   -v "$(pwd):/input:rw" \
+   -v "${OUTPUT}:/output:rw" \
    --entrypoint "/bin/bash" \
-   ivonet/videotools:latest
+   ivonet/nas-cli-tools:latest
 IFS=$SAVEIFS
 
