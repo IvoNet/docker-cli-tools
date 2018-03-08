@@ -15,7 +15,7 @@ docker run \
    --rm \
    -v "$(pwd)/$map:/input:ro" \
    --entrypoint "mkvinfo" \
-   ivonet/nas-cli-tools:latest \
+   ivonet/cli-tools:latest \
    "/input/$mkv"
 IFS=$SAVEIFS
 

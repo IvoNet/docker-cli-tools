@@ -18,6 +18,6 @@ docker run \
    -v "$(pwd):/input:ro" \
    -v "${AUDIOBOOK_LOC}:/output:rw" \
    --entrypoint "m4b" \
-   ivonet/nas-cli-tools:latest \
+   ivonet/cli-tools:latest \
    "$@"
 IFS=$SAVEIFS

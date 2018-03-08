@@ -23,7 +23,7 @@ docker run \
    -v "$(pwd)/$map:/input:ro" \
    -v "$(pwd)/$map:/output:rw" \
    --entrypoint "ffmpeg" \
-   ivonet/nas-cli-tools:latest \
+   ivonet/cli-tools:latest \
    -i "/input/$mkv" -map 0 -c:a copy -c:s copy -c:v libx264 "/output/$enc"
 IFS=$SAVEIFS
 

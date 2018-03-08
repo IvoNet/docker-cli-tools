@@ -25,7 +25,7 @@ docker run \
    -v "$(pwd)/$map:/input:ro" \
    -v "$(pwd)/$map:/output:rw" \
    --entrypoint "mkvmerge" \
-   ivonet/nas-cli-tools:latest \
+   ivonet/cli-tools:latest \
    -i "/input/$mkv" -o "/output/$enc" --audio-tracks !$2
 IFS=$SAVEIFS
 
